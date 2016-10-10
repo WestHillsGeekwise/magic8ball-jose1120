@@ -6,10 +6,57 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    document.getElementById("btn").addEventListener("click", reset);
+
+    function reset()
+    {
+      document.getElementById("yourquestion").value="";
+    }
+
+    var messages = new Array();
+    messages[1]="<img src='http://planetoftheweb.com/i/8ball/1.png'>";
+    messages[2]="<img src='http://planetoftheweb.com/i/8ball/2.png'>";
+    messages[3]="<img src='http://planetoftheweb.com/i/8ball/3.png'>";
+    messages[4]="<img src='http://planetoftheweb.com/i/8ball/4.png'>";
+    messages[5]="<img src='http://planetoftheweb.com/i/8ball/5.png'>";
+    messages[6]="<img src='http://planetoftheweb.com/i/8ball/6.png'>";
+    messages[7]="<img src='http://planetoftheweb.com/i/8ball/7.png'>";
+    messages[8]="<img src='http://planetoftheweb.com/i/8ball/8.png'>";
+    messages[9]="<img src='http://planetoftheweb.com/i/8ball/9.png'>";
+    messages[10]="<img src='http://planetoftheweb.com/i/8ball/10.png'>";
+    messages[11]="<img src='http://planetoftheweb.com/i/8ball/11.png'>";
+    messages[12]="<img src='http://planetoftheweb.com/i/8ball/12.png'>";
+    messages[13]="<img src='http://planetoftheweb.com/i/8ball/13.png'>";
+    messages[14]="<img src='http://planetoftheweb.com/i/8ball/14.png'>";
+    messages[15]="<img src='http://planetoftheweb.com/i/8ball/15.png'>";
+    messages[16]="<img src='http://planetoftheweb.com/i/8ball/16.png'>";
+    messages[17]="<img src='http://planetoftheweb.com/i/8ball/17.png'>";
+    messages[18]="<img src='http://planetoftheweb.com/i/8ball/18.png'>";
+    messages[19]="<img src='http://planetoftheweb.com/i/8ball/19.png'>";
+
+    function result()
+    {
+      var randomnumber = Math.floor(Math.random() * 21);
+      document.getElementById("8ball").messages[randomnumber];
+    }
+  </script>
 </head>
 <body>
-  <!-- add your html stuff here -->
+  <h1>MAGIC 8 BALL</h1>
+  <hr />
+  <div class="questionbuttons">
+    <input id="yourquestion" type="text" name="question" placeholder="Ask any question you would like!" value="" required><br />
 
-  <script src="js/script.js"></script>
+    <button id="btn" onclick="resetBtn()">Reset Text</button>
+    <button onclick="result()">Enter</button>
+    <br />
+  </div>
+
+
+  <img src="http://planetoftheweb.com/i/8ball/empty.png" width="50%"/>
+
+  <script id="8ball" src="js/script.js"></script>
 </body>
 </html>
